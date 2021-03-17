@@ -1,8 +1,64 @@
 {
     "name": "keyframes-scoped-fix",
-    "version": "0.1.0",
+    "version": "0.1.3",
+    "author": "ArthurSuz <931446361@qq.com>",
+    "description": "fix(compiler-sfc): scope Id should not be attached to the Rules in the keyframes https://github.com/vuejs/vue-next/pull/3308",
+    "homepage": "https://github.com/ArthurSuz/keyframesScopedFix",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ArthurSuz/keyframesScopedFix.git"
+    },
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ArthurSuz/keyframesScopedFix/issues"
+    },
+    "main": "dist/keyframes-scoped-fix.cjs.js",
+    "module": "dist/keyframes-scoped-fix.es.js",
+    "scripts": {
+        "build": "rollup -c",
+        "ci:coverage": "nyc report --reporter=text-lcov > coverage.lcov",
+        "prebuild": "del-cli dist",
+        "prepare": "npm run build"
+    },
+    "files": [
+        "dist",
+        "src",
+        "types",
+        "README.md"
+    ],
+    "keywords": [
+        "rollup",
+        "plugin",
+        "replace",
+        "es2015",
+        "npm",
+        "modules"
+    ],
+    "peerDependencies": {
+        "rollup": "^1.20.0 || ^2.0.0"
+    },
     "dependencies": {
-        "@rollup/pluginutils": "^4.1.0",
+        "@rollup/pluginutils": "^3.1.0",
         "magic-string": "^0.25.7"
+    },
+    "devDependencies": {
+        "@rollup/plugin-buble": "^0.21.3",
+        "del-cli": "^3.0.1",
+        "locate-character": "^2.0.5",
+        "rollup": "^2.23.0",
+        "source-map": "^0.7.3",
+        "typescript": "^3.9.7"
+    },
+    "types": "types/index.d.ts",
+    "ava": {
+        "babel": {
+            "compileEnhancements": false
+        },
+        "files": [
+            "!**/fixtures/**",
+            "!**/helpers/**",
+            "!**/recipes/**",
+            "!**/types.ts"
+        ]
     }
 }
