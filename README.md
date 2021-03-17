@@ -5,11 +5,9 @@ https://github.com/vuejs/vue-next/pull/3308
 
 Vue3.0.7 bug temporary solution, through `plugins` to repair;
 
-use like this
-
 ```
 // vite.congfig.js
-import keyframesScopedFix from 'keyframesScopedFix';
+import keyframesScopedFix from 'keyframes-scoped-fix';
 module.exports = {
     ...
     plugins: [keyframesScopedFix()],
